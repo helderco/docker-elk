@@ -34,7 +34,7 @@ After this, they should all be up. If not, check the logs.
 I should probably run this forwarder example in a container, but for now, these
 instructions are for running in your host.
 
-First copy the `ssl/server.crt` file to your host's `/etc/logstash/ssl/server.crt`.
+First, copy the `ssl/server.crt` file to your host's `/etc/logstash/ssl/server.crt`.
 This will be needed for the Forwarder to validate the connection to Logstash.
 
 Then install Logstash Forwarder to `/usr/local/bin/logstash-forwarder` with:
@@ -47,7 +47,7 @@ Now run the forwarder with:
 
 If you're not in this example dir, then change path accordingly.
 
-You should see the output from the forwarder, see if everything looks ok.
+You should see the output from the forwarder. Check if everything looks ok.
 
 
 ### 4. Open Kibana
