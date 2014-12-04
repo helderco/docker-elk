@@ -44,7 +44,7 @@ To know more about how to use this, read the documentation for each component:
 * [Kibana](kibana/README.md)
 * [Logstash Forwarder](forwarder/README.md)
 
-I created an [example](example/README.md) setup with simple instructions using [crane][]
+I created an [example](example/) setup with simple instructions using [crane][]
 so you can try it out and develop from a working setup.
 
 ## Contributing
