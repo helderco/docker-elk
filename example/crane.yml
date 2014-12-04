@@ -1,0 +1,50 @@
+containers:
+  elasticsearch:
+    image: elasticsearch
+    dockerfile: elasticsearch
+    run:
+      detach: true
+      volume:
+        - /var/srv/elasticsearch:/data
+
+  kibana:
+    image: kibana
+    dockerfile: kibana
+    run:
+      detach: true
+      publish:
+        - 80:80
+      link:
+        - elasticsearch:elasticsearch
+      volume:
+        - /var/srv/kibana/htpassd:/etc/nginx/.htpassd
+      env:
+        - DEFAULT_ROUTE=/dashboard/file/logstash.json
+
+  logstash:
+    image: logstash
+    dockerfile: logstash
+    run:
+      cmd: bin/logstash agent -f central.conf
+      detach: true
+      publish:
+        - 5000:5000
+      link:
+        - elasticsearch:elasticsearch
+      volume:
+        - ssl:/etc/logstash/ssl
+        - logstash.conf:/opt/logstash/central.conf
+
+  forwarder:
+    image: logstash-forwarder
+    dockerfile: logstash-forwarder
+    run:
+      rm: true
+      volume:
+        - /usr/local/bin:/target
+
+groups:
+  default:
+    - elasticsearch
+    - kibana
+    - logstash
