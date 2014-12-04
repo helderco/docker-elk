@@ -56,6 +56,8 @@ Use your browser and access Kibana:
 
     http://yourhost.example.net
 
+Default username and password is *kibana / docker*.
+
 
 ### 4. Rinse, repeat
 
