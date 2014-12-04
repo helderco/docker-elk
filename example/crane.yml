@@ -1,15 +1,13 @@
 containers:
   elasticsearch:
-    image: elasticsearch
-    dockerfile: elasticsearch
+    image: helder/elasticsearch:1.1.1
     run:
       detach: true
       volume:
         - /var/srv/elasticsearch:/data
 
   kibana:
-    image: kibana
-    dockerfile: kibana
+    image: helder/kibana:3.1.2
     run:
       detach: true
       publish:
@@ -22,8 +20,7 @@ containers:
         - DEFAULT_ROUTE=/dashboard/file/logstash.json
 
   logstash:
-    image: logstash
-    dockerfile: logstash
+    image: helder/logstash:1.4.2
     run:
       cmd: bin/logstash agent -f central.conf
       detach: true
@@ -36,8 +33,7 @@ containers:
         - logstash.conf:/opt/logstash/central.conf
 
   forwarder:
-    image: logstash-forwarder
-    dockerfile: logstash-forwarder
+    image: helder/logstash-forwarder:latest
     run:
       rm: true
       volume:
