@@ -39,10 +39,10 @@ a recomended Elasticsearch version and I'm using the one for the latest Logstash
 Even though I created these images as a part of one stack, they can be used independently.
 To know more about how to use this, read the documentation for each component:
 
-* [Elasticsearch](elasticsearch/README.md)
-* [Logstash](logstash/README.md)
-* [Kibana](kibana/README.md)
-* [Logstash Forwarder](forwarder/README.md)
+* [Elasticsearch](elasticsearch/)
+* [Logstash](logstash/)
+* [Kibana](kibana/)
+* [Logstash Forwarder](forwarder/)
 
 I created an [example](example/) setup with simple instructions using [crane][]
 so you can try it out and develop from a working setup.
