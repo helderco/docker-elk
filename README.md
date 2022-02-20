@@ -1,4 +1,4 @@
-# Dockerized ELK stack
+# Dockerized ELK stack (DEPRECATED)
 
 This is a setup for [Elasticsearch ELK stack][] using docker containers:
 
